@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ribbon
+
+server:
+  port: 8701
+
+eureka:
+  client:
+    #注册中心的地址
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/

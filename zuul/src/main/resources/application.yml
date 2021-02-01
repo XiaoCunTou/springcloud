@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8703
+
+eureka:
+  client:
+    #注册中心的地址
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: feign
+    api-b:
+      path: /api-b/**
+      serviceId: ribbon

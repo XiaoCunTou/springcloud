@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: modules-produce
+
+server:
+  port: 8712
+
+eureka:
+  client:
+    #注册中心的地址
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/

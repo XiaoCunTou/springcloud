@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: modules-config
+  cloud:
+    #配置客户端
+    config:
+      #分支
+      label: master
+      profile: dev
+      #uri: http://localhost:8704/
+      #从配置中心读取文件 配置中心的serverId
+      discovery:
+        enabled: true
+        service-id: config
+    #bus消息总线
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  #rabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+server:
+  port: 8716
+
+eureka:
+  client:
+    #注册中心的地址
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+
+#暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

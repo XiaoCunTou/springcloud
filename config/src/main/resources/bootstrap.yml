@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      #git配置 仓库地址 路径 用户名 密码（公开仓库可以不填用户名和密码）
+      server:
+        git:
+          uri: https://github.com/XiaoCunTou/springCloudConfig
+          search-paths: resources
+          username:
+          password:
+      #分支
+      label: master
+
+server:
+  port: 8704
+
+eureka:
+  client:
+    #注册中心的地址
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://localhost:8761/eureka/,http://localhost:8769/eureka/

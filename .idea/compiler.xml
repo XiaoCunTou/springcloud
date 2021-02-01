@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway" />
+        <module name="eureka" />
+        <module name="turbine" />
+        <module name="modules-produce" />
+        <module name="ribbon" />
+        <module name="feign" />
+        <module name="modules-ribbon" />
+        <module name="zipkin-client2" />
+        <module name="modules-consumer" />
+        <module name="zipkin-client1" />
+        <module name="modules-config" />
+        <module name="config" />
+        <module name="zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eeee" target="1.8" />
+      <module name="modules" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config" options="-parameters" />
+      <module name="eeee" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="feign" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="modules" options="" />
+      <module name="modules-config" options="-parameters" />
+      <module name="modules-consumer" options="-parameters" />
+      <module name="modules-produce" options="-parameters" />
+      <module name="ribbon" options="-parameters" />
+      <module name="springcloud" options="" />
+      <module name="turbine" options="-parameters" />
+      <module name="zipkin" options="-parameters" />
+      <module name="zipkin-client1" options="-parameters" />
+      <module name="zipkin-client2" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>
