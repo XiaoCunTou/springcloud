@@ -26,12 +26,16 @@ spring:
           lower-case-service-id: true #服务名小写
 server:
   port: 8703
+  address: 192.168.20.30
 
 eureka:
   client:
     #注册中心的地址
     serviceUrl:
       defaultZone: http://192.168.20.30:8700/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${server.address}:${server.port}
 
 logging:
   level:
