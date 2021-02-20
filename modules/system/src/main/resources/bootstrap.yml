@@ -1,0 +1,34 @@
+server:
+  port: 8722
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.20.30:8700/eureka/
+
+spring:
+  application:
+    name: modules-system
+  cloud:
+    config:
+      #分支
+      label: master
+      profile: dev
+      #uri: http://localhost:8704/
+      #从配置中心读取文件 配置中心的serverId
+      discovery:
+        enabled: true
+        service-id: config
+    #bus消息总线
+#    bus:
+#      enabled: true
+#      trace:
+#        enabled: true
+
+#暴露端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh
+

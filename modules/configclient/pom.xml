@@ -44,6 +44,11 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${bus-amqp.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.cloud</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

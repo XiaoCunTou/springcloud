@@ -29,10 +29,12 @@
         <module>config</module>
         <module>zipkin</module>
         <module>turbine</module>
+        <module>common</module>
     </modules>
 
 
     <properties>
+        <my.version>1.0</my.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -47,6 +49,8 @@
         <bus-amqp.version>2.0.2.RELEASE</bus-amqp.version>
         <zipkin.version>2.0.0.RELEASE</zipkin.version>
         <gateway.version>2.0.0.RELEASE</gateway.version>
+        <druid.version>1.2.4</druid.version>
+        <dynamic.version>2.3.1</dynamic.version>
     </properties>
 
     <dependencies>
@@ -59,6 +63,9 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--无法多继承可以使用这种方式实现多模块继承  默认type是jar设置为pom
+            声明导入的是一个父模块 import代表将父模块中的jar导入进来-->
+
             <!-- SpringCloud 微服务 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -66,6 +73,39 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- eureka client -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <!-- Druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- Dynamic DataSource -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.version}</version>
+            </dependency>
+
+            <!-- my-common -->
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${my.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>common-datasource</artifactId>
+                <version>${my.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
